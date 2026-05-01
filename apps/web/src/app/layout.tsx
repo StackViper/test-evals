@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "test-evals",
-  description: "test-evals",
+  title: "HealosBench — Clinical Eval Harness",
+  description: "Enterprise-grade evaluation harness for structured clinical extraction.",
 };
 
 export default function RootLayout({
@@ -26,12 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning className="dark">
+      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#050505]`}>
         <Providers>
-          <div className="grid grid-rows-[auto_1fr] h-svh">
+          <div className="flex flex-col min-h-screen">
             <Header />
-            {children}
+            <main className="flex-1">
+              {children}
+            </main>
           </div>
         </Providers>
       </body>
